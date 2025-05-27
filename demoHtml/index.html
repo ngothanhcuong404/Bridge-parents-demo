@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.shopify.com/shopifycloud/app-bridge-ui-experimental.js"></script>
+
+</head>
+
+<body>
+    <s-page size="base">
+        <s-section heading="Chào mừng đến với ứng dụng của bạn">
+            <s-paragraph>
+                Đây là một ví dụ về cách sử dụng Polaris Web Components trong một trang HTML tĩnh.
+            </s-paragraph>
+            <s-button tone="success" variant="primary" onclick="alert('Bạn đã nhấn nút!')">
+                Nhấn vào tôi
+            </s-button>
+        </s-section>
+
+        <s-section heading="Thông báo">
+            <s-banner tone="info">
+                <s-paragraph>Ứng dụng của bạn đã được kết nối thành công với Shopify!</s-paragraph>
+            </s-banner>
+        </s-section>
+
+        <s-section heading="Badges">
+            <s-stack gap="base">
+                <s-badge>Fulfilled</s-badge>
+                <s-badge tone="info">Draft</s-badge>
+                <s-badge tone="success">Active</s-badge>
+                <s-badge tone="caution">Open</s-badge>
+                <s-badge tone="warning">On hold</s-badge>
+                <s-badge tone="critical">Action required</s-badge>
+            </s-stack>
+        </s-section>
+
+        <s-banner heading="Banner" tone="info" dismissible>
+            This order was archived on March 7, 2017 at 3:12pm EDT.
+        </s-banner>
+        <s-section heading="Spinner">
+            <s-spinner accessibilityLabel="Loading" size="large-100"></s-spinner>
+        </s-section>
+        <s-section heading="Button">
+            <s-section heading="Variants & tone">
+                <s-stack gap="base">
+                    <s-button variant="primary">Primary</s-button>
+                    <s-button variant="secondary">Secondary</s-button>
+                    <s-button variant="tertiary">Tertiary</s-button>
+                    <s-button tone="critical">Critical (tone)</s-button>
+                </s-stack>
+            </s-section>
+            <s-section heading="Icon-only with accessibilityLabel">
+                <s-button icon="search" accessibilityLabel="Tìm kiếm" variant="secondary"></s-button>
+                <s-text size="300">← màn hình đọc sẽ đọc “Tìm kiếm”.</s-text>
+            </s-section>
+            <s-section heading="Link behaviour">
+                <s-stack spacing="400">
+                    <s-button href="https://shopify.dev" target="_blank" variant="primary" icon="link">
+                        Tới Shopify Dev
+                    </s-button>
+                    <s-button href="data:text/plain;base64,VHJ5IFNob3BpZnkgUG9sYXJpcyEg" download="readme.txt"
+                        icon="download" variant="secondary">
+                        Tải README
+                    </s-button>
+                </s-stack>
+            </s-section>
+            <s-section heading="Disabled & loading">
+                <s-stack spacing="400">
+                    <s-button disabled variant="secondary">Disabled</s-button>
+                    <s-button loading variant="secondary">Đang xử lý…</s-button>
+                </s-stack>
+            </s-section>
+
+        </s-section>
+        <s-section heading="Divider">
+            <s-paragraph>demo divider</s-paragraph>
+            <s-divider></s-divider>
+            <s-paragraph>demo divider</s-paragraph>
+            <s-divider></s-divider>
+        </s-section>
+        <s-section heading="grid">
+            <s-grid gridTemplateColumns="repeat(2, 1fr)" gap="small" justifyContent="center">
+                <s-grid-item gridColumn="span 2" border="base" borderStyle="dashed">
+                    Summary of sales
+                </s-grid-item>
+                <s-grid-item gridColumn="span 1" border="base" borderStyle="dashed">
+                    Orders
+                </s-grid-item>
+                <s-grid-item gridColumn="auto" border="base" borderStyle="dashed">
+                    Customers
+                </s-grid-item>
+            </s-grid>
+
+        </s-section>
+        <s-section heading="OrderedList">
+            <s-ordered-list>
+                <s-list-item>Red shirt</s-list-item>
+                <s-list-item>Green shirt</s-list-item>
+                <s-list-item>Blue shirt</s-list-item>
+            </s-ordered-list>
+
+        </s-section>
+        <s-section heading="table">
+            <s-table>
+                <s-table-header-row>
+                    <s-table-header>Name</s-table-header>
+                    <s-table-header>Email</s-table-header>
+                    <s-table-header>Phone</s-table-header>
+                </s-table-header-row>
+                <s-table-body>
+                    <s-table-row>
+                        <s-table-cell>John Doe</s-table-cell>
+                        <s-table-cell>john.doe@example.com</s-table-cell>
+                        <s-table-cell>123-456-7890</s-table-cell>
+                    </s-table-row>
+                    <s-table-row>
+                        <s-table-cell>Jane Doe</s-table-cell>
+                        <s-table-cell>jane.doe@example.com</s-table-cell>
+                        <s-table-cell>123-456-7890</s-table-cell>
+                    </s-table-row>
+                    <s-table-row>
+                        <s-table-cell>Brandon Doe</s-table-cell>
+                        <s-table-cell>brandon.doe@example.com</s-table-cell>
+                        <s-table-cell>123-456-7890</s-table-cell>
+                    </s-table-row>
+                </s-table-body>
+            </s-table>
+        </s-section>
+        <s-section heading="form">
+            <form action="">
+                <s-checkbox label="Require a confirmation step"
+                    details="Ensure all criteria are met before proceeding"></s-checkbox>
+                <s-choice-list label="Company name" name="Company name"
+                    details="The company name will be displayed on the checkout page.">
+                    <s-choice label="Hidden" value="hidden"></s-choice>
+                    <s-choice label="Optional" value="optional"></s-choice>
+                    <s-choice label="Required" value="required"></s-choice>
+                </s-choice-list>
+                <s-email-field label="Email" placeholder="bernadette.lapresse@jadedpixel.com"
+                    details="Used for sending notifications"></s-email-field>
+                <s-money-field label="Regional Price" placeholder="99.99" currencyCode="EUR"
+                    details="Recommended price for the European market"></s-money-field>
+                <s-number-field label="Quantity" details="Number of items in stock" placeholder="10" step="5" min="0"
+                    max="100"></s-number-field>
+
+                <s-password-field label="Password" placeholder="Enter your password"
+                    details="Must be at least 8 characters long" minLength="8"></s-password-field>
+                <s-select label="Date range">
+                    <s-option value="1">Today</s-option>
+                    <s-option value="2">Yesterday</s-option>
+                    <s-option value="3">Last 7 days</s-option>
+                </s-select>
+                <s-text-area label="Shipping address" value="1776 Barnes Street, Orlando, FL 32801"
+                    rows="3"></s-text-area>
+                <s-text-field label="Store name" defaultValue="Jaded Pixel"
+                    placeholder="Become a merchant"></s-text-field>
+                <s-url-field label="Your website" details="Join the partner ecosystem"
+                    placeholder="https://shopify.com/partner"></s-url-field>
+
+
+
+            </form>
+        </s-section>
+        <s-section heading="date-picker">
+            <s-date-picker view="2025-05" type="range" value="2025-05-28--2025-05-31"></s-date-picker>
+
+        </s-section>
+        <s-section heading="search-field">
+            <s-search-field label="Search" labelAccessibilityVisibility="exclusive"
+                placeholder="Search items"></s-search-field>
+        </s-section>
+        <s-section heading="switch">
+            <s-switch label="Enable feature" details="Ensure all criteria are met before enabling"></s-switch>
+
+        </s-section>
+    </s-page>
+
+
+</body>
+
+</html>
